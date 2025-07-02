@@ -29,6 +29,7 @@ class CoverArtService
             'original_name' => $audioFile->getClientOriginalName(),
             'hashed_name' => $audioFilename,
             'extension' => $audioFile->getClientOriginalExtension(),
+            'mime_type' => $audioFile->getClientMimeType(),
         ]);
 
         Cover::create([

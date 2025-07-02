@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->string('original_name');
             $table->string('hashed_name');
             $table->string('extension');
+            $table->string('mime_type');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
