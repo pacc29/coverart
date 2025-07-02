@@ -34,10 +34,13 @@ class CoverArtController extends Controller
             $frontCoverFile
         );
 
-        // TODO: Return the audio file
-
-
-        return response()->rspOk();
+        // Return the audio file with embedded cover art
+        return Storage::disk('output')
+            ->download
+            (
+                $audio->hashed_name,
+                $audio->original_name
+            );
     }
 
     /**
